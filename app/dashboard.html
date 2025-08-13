@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="Site keywords here">
+    <meta name="description" content="#">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- ✅ CSS -->
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/font-awesome-all.min.css">
+    <link rel="stylesheet" href="static/css/slickslider.min.css">
+    <link rel="stylesheet" href="static/css/reset.css">
+
+    
+    <!-- Fav Icon -->
+    <!-- <link rel="shortcut icon" href="static/img/m-favicon.png"> -->
+    <title>Dashboard</title>
+
+</head>
+
+<body>
+
+    <!-- <div class="body-bg" style="background-image:url('img/body-bg.jpg')"> -->
+    <div id="pageLoader" class="spinner-bouncing-dots">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+
+    <div class="body-bg" style="display: none;">
+        <!-- NFTMax Admin Menu -->
+        <div class="nftmax-smenu">
+            <!-- Admin Menu -->
+            <div id="sidebar-container"></div>
+        </div>
+        <header class="nftmax-header">
+            <div id="navbar-container"></div>            <!-- End Admin Menu -->
+        </header>
+
+        <!-- 
+            <div class="spinner-bars">
+            <div></div>
+            <div></div>
+            <div></div>
+            </div> -->
+ 
+
+       
+        <!-- End NFTMax Admin Menu -->
+
+        <!-- 
+        <div class="trending-action mg-top-40">
+            <h2 class="trending-action__heading" style="margin-bottom: 0;">Dashoard page</h2>
+        </div> -->
+
+
+        <!-- End Header -->
+
+        <!-- NFTmax Dashboard -->
+        <section class="nftmax-adashboard nftmax-show">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xxl-9 col-12 nftmax-main__column">
+                        <div class="nftmax-body">
+                            <!-- Dashboard Inner -->
+                            <div class="nftmax-dsinner">
+                                <!-- Dashboard Slider -->
+                                <div class="container-fluid mg-top-40">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <!-- Charts Two -->
+                                            <div class="charts-main charts-home-one mg-top-10">
+                                                <!-- <div class="charts-main__heading">
+                                                    <h4 class="charts-main__title">Card Three</h4>
+                                                </div> -->
+                                                <!-- Iframe Section -->
+                                                <div class="row mg-top-20">
+                                                    <!-- Left Iframe -->
+                                                   <h1>Welcome to Dashboard</h1>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Dashboard Inner -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End NFTmax Dashboard -->
+
+    </div>
+
+    <!-- ✅ JS -->
+    <script src="static/jquery.min.js"></script>
+    <script src="static/jquery-migrate.js"></script>
+    <script src="static/bootstrap.min.js"></script>
+    <script src="static/slickslider.min.js"></script>
+    <script src="static/main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   
+    <script>
+        window.addEventListener('beforeunload', function() {
+            // console.log('ssss')
+            document.getElementById('pageLoader').style.display = 'block';
+            document.querySelector('.body-bg').style.display = 'none'; 
+        });
+
+        window.addEventListener('load', function() {
+            // console.log('dddddd')
+            setTimeout(function() {
+                document.getElementById('pageLoader').style.display = 'none'; 
+                document.querySelector('.body-bg').style.display = 'block'; 
+            }, 500); 
+        });
+    </script>
+
+
+
+    <script>
+        function toggleDropdown() {
+            var dropdown = document.getElementById("dropdownMenu");
+            dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+        }
+
+        window.onclick = function (event) {
+            var dropdown = document.getElementById("dropdownMenu");
+            if (!event.target.matches('.nftmax-card-hover') && !event.target.matches('.nftmax-card-hover *')) {
+                dropdown.style.display = "none";
+            }
+        };
+    </script>
+
+    <script>
+    // Load sidebar.html into #sidebar-container
+    fetch("sidebar.html")
+        .then(res => res.text())
+        .then(data => {
+        document.getElementById("sidebar-container").innerHTML = data;
+        });
+
+    // Load navbar.html into #navbar-container
+    fetch("navbar.html")
+    .then(res => res.text())
+    .then(data => {
+        document.getElementById("navbar-container").innerHTML = data;
+    });
+
+    </script>
+
+
+
+
+</body>
+
+</html>
